@@ -30,9 +30,9 @@ p {
 .see-all-button {
   background-color: var(--color-bg-button);
   color: var(--color-text-button);
-  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
   margin-top: 0.5rem;
-  border-radius: 2px;
+  border-radius: 2rem;
   max-width: 10rem;
 }
 
@@ -42,6 +42,7 @@ p {
   gap: 2rem;
   justify-items: center;
   align-items: center;
+  margin: 1rem 4rem 4rem 5rem;
 }
 .img_grid {
   display: grid;
