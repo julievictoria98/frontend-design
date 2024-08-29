@@ -2,35 +2,65 @@
 
 @import "./reset.css" layer(reset);
 
-
 @layer exercise {
-    :root {
-        --content-width: 50rem;
-        --card-padding: 2.75rem 2.1875rem;
-        --card-gap: 1rem;
-        --card-border-radius: 8px;
-        --card-background: #EBEBEB;
-        --card-text-color: #595566;
-    }
+  :root {
+    --content-width: 50rem;
+    --card-padding: 2.75rem 2.1875rem;
+    --card-gap: 1rem;
+    --card-border-radius: 8px;
+    --card-background: #ebebeb;
+    --card-text-color: #595566;
+  }
 
-    body {
-        min-height: 100svh;
-        font-family: system-ui, sans-serif;
-    }
+  body {
+    min-height: 100svh;
+    font-family: system-ui, sans-serif;
+  }
 
-    h2,
-    h3 {
-        color: #181818;
-        margin-block: 0 0.625rem;
-        line-height: 1.125;
-    }
+  h2,
+  h3 {
+    color: #181818;
+    margin-block: 0 0.625rem;
+    line-height: 1.125;
+  }
 
-    h2 {
-        font-size: 2.8125rem;
-    }
+  h2 {
+    font-size: 2.8125rem;
+  }
 
-    h3 {
-        font-weight: 700;
-        font-size: 1.5625rem;
-    }
+  h3 {
+    font-weight: 700;
+    font-size: 1.5625rem;
+  }
+}
+
+html {
+}
+
+main {
+  padding-block: 4rem; /* Kun af æstetiske årsager */
+}
+section {
+  --gap: clamp(1rem, 6vw, 3rem);
+  --full: minmax(var(--gap), 1fr);
+  --content: min(50rem, 100% - var(--gap) * 2);
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--full)
+    [content-start] var(--content) [content-end]
+    var(--full) [full-end];
+
+  & > * {
+    grid-column: content;
+  }
+  & h2 {
+    font-weight: 550;
+  }
+
+  & p {
+    max-width: 120000ch;
+  }
+  & > :last-child {
+    grid-column: full;
+  }
 }
