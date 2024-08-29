@@ -4,7 +4,7 @@
 
 @layer exercise {
   :root {
-    --content-width: 50rem;
+    --content: 50rem;
     --card-padding: 2.75rem 2.1875rem;
     --card-gap: 1rem;
     --card-border-radius: 8px;
@@ -34,34 +34,27 @@
   }
 }
 
-html {
-}
-
 main {
   padding-block: 4rem; /* Kun af æstetiske årsager */
 }
+
 section {
-  --gap: clamp(1rem, 6vw, 3rem);
-  --full: minmax(var(--gap), 1fr);
-  --content: min(50rem, 100% - var(--gap) * 2);
   display: grid;
   gap: 10rem;
-  grid-template-columns:
-    [full-start] var(--full)
-    [content-start] var(--content) [content-end]
-    var(--full) [full-end];
+  grid-template-columns: 1fr minmax(0, var(--content)) 1fr;
 
   & > * {
-    grid-column: content;
+    grid-column: 2;
   }
   & h2 {
     font-weight: 550;
   }
 
   & p {
-    max-width: 60ch;
+    max-width: 70ch;
   }
-  & > :last-child {
-    grid-column: full;
+
+  & > *:last-child {
+    grid-column: 1 / -1;
   }
 }
