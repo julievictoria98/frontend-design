@@ -3,38 +3,32 @@ const { cardContent } = Astro.props;
 ---
 
 <ul class="full-width">
-  {
-    cardContent.map((card) => (
-      <li>
-        <h3>{card.title}</h3>
-        <p>{card.body}</p>
-      </li>
-    ))
-  }
+  {cardContent.map((card) => (
+    <li>
+      <h3>{card.title}</h3>
+      <p>{card.body}</p>
+    </li>
+  ))}
 </ul>
 
 <style>
-
- 
   ul {
     list-style: none;
     display: flex;
-    padding:0rem;
+    padding: 0;
     flex-direction: row;
-    gap:1.5rem; 
+    gap: var(--card-gap);
     align-items: flex-start;
     overflow-x: auto;
-    padding-left:22rem;
-    padding-right:22rem;
-    
-    &>*{
-      min-width: 25rem ;
-      background-color: var(--card-background);
-      padding: 1.5rem;
-      border-radius: 30px;
-      align-self: flex-start;
-      margin-bottom: 2rem;
-    }
-    
+    padding-inline: max(1rem, 50% - var(--content) / 2);
+  }
+
+  ul > * {
+    min-width: 25rem;
+    background-color: var(--card-background);
+    color: var(--card-text-color);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 2rem;
   }
 </style>
