@@ -10,6 +10,12 @@ ul {
   gap: 1rlh;
   padding-block: 1rlh;
 
+  @container (width>500px) {
+    & > *:nth-of-type(even) img {
+      order: 1;
+    }
+  }
+
   @container (width > 700px) {
     grid-template-columns: 1fr 1fr;
     > *:first-child {
@@ -43,10 +49,11 @@ article {
   p + p {
     margin-top: 0.4lh;
   }
+
   @container (width > 500px) {
     grid-template-columns: 1fr 1fr;
-    order: -1;
   }
+
   /* Tilføj container regel når width > 500px */
   /* - Indstil 2 kolonner */
   /* - Sæt `order: 1;` på img på hvert andet card */
