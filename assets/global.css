@@ -2,4 +2,4 @@
 
 @import "./reset.css" layer(reset);
 @import "./base.css" layer(base);
-@import "../style.css" layer(exercise);
+@import "../version2.css" layer(exercise);
